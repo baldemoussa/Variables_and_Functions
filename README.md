@@ -1,0 +1,8 @@
+# Reflection Questions
+
+## How did you approach creating more flexible functions with parameters?
+Instead of hardcoding specific values inside the function, I looked for the data that might change each time the function is used and turned those into parameters. By doing this, I could pass different arguments into the function when calling it. This approach made my functions reusable for many different scenarios rather than being limited to just one specific task.
+## What challenges did you face while incorporating conditional logic in your functions?
+One of the main challenges was making sure I accounted for all possible edge cases using if, else if, and else statements. It was sometimes tricky to figure out the correct order for the conditions; I had to ensure the most specific conditions were checked first so the logic wouldn't evaluate incorrectly. I also had to carefully track what the function was returning inside each branch to avoid unexpected bugs.
+## How does refactoring improve the readability and maintainability of your code?
+Refactoring improves readability by cleaning up messy code and breaking down large, complicated chunks of logic into smaller, focused functions with clear, descriptive names. This makes the code much easier to read and understand at a glance. It improves maintainability because if I need to fix a bug or add a new feature later, I know exactly which small function to update instead of having to search through a massive, confusing script
