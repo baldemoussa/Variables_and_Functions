@@ -1,3 +1,65 @@
+# Variables and Functions
+
+A Node script with four functions and the test calls that print their results. There is no HTML page. This screenshot is the console output from `node script.js`.
+
+![Console output from the four test groups](docs/screenshots/console.png)
+
+## Task 1: `formatFullName`
+
+`capitalizeFirstLetter` uppercases the first character and leaves the rest of the string as it was. `formatFullName` joins the two results with a comma and a space.
+
+| Call | Printed result |
+| --- | --- |
+| `formatFullName("Mamadou Moussa", "Balde")` | `Mamadou Moussa, Balde` |
+| `formatFullName("mamadou", "balde")` | `Mamadou, Balde` |
+| `formatFullName("Mamadou Moussa")` | `Invalid name input` |
+
+A missing first or last name returns `Invalid name input`. The third call has no last name, so `lastName` is `undefined`.
+
+## Task 2: `calculateTotalCost`
+
+The total is `price * quantity * (1 + taxRate)`. Each argument must be a number. A string, a missing argument, or `NaN` returns `Invalid input`.
+
+| Call | Printed result |
+| --- | --- |
+| `calculateTotalCost(10, 5, 0.08)` | `54` |
+| `calculateTotalCost(10, 5, "0.1")` | `Invalid input` |
+| `calculateTotalCost(10, 5)` | `Invalid input` |
+
+## Task 3: `checkEligibility`
+
+Age 18 or older and employed returns `You are Eligible`. Age 18 or older and not employed returns `You are Conditionally eligible`. Any other age returns `You are Not eligible`. A missing age or employment value returns `Invalid input`.
+
+| Call | Printed result |
+| --- | --- |
+| `checkEligibility(25, true)` | `You are Eligible` |
+| `checkEligibility(25, false)` | `You are Conditionally eligible` |
+| `checkEligibility(15, true)` | `You are Not eligible` |
+| `checkEligibility(15, false)` | `You are Not eligible` |
+
+An employed 15-year-old is not eligible. The age check comes first.
+
+## Task 4: `calculateTotalCostRefactored`
+
+This version takes an optional `discount` that defaults to `0`. The discount is subtracted from the line total, and then tax is applied: `(price * quantity - discount) * (1 + taxRate)`. A missing price, quantity, or tax rate returns `Invalid input`. Unlike task 2, this version does not check that the arguments are numbers.
+
+| Call | Printed result |
+| --- | --- |
+| `calculateTotalCostRefactored(10, 5, 0.08)` | `54` |
+| `calculateTotalCostRefactored(10, 5, 0.1)` | `55.00000000000001` |
+| `calculateTotalCostRefactored(10, 5)` | `Invalid input` |
+| `calculateTotalCostRefactored(10, 5, 0.08, 4)` | `49.68000000000001` |
+
+`10 * 5 * 1.1` and `(50 - 4) * 1.08` print with the extra floating-point digits shown above.
+
+## Getting started
+
+```bash
+node script.js
+```
+
+The file has no `package.json`. Node runs it directly.
+
 # Reflection Questions
 
 ## How did you approach creating more flexible functions with parameters?
