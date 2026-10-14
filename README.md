@@ -1,5 +1,7 @@
 # Variables and Functions
 
+## By [Mamadou Moussa Balde](https://www.linkedin.com/in/2mb/)
+
 A Node script with four functions and the test calls that print their results. There is no HTML page. This screenshot is the console output from `node script.js`.
 
 ![Console output from the four test groups](docs/screenshots/console.png)
